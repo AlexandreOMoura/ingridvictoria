@@ -15,7 +15,7 @@ const CONFIG = {
     googleFormsUrl: 'https://forms.gle/bMM1sQ5GBNuA6Er47',
 
     courseName: 'Curso de Aplicação de Vacinas e Injetáveis',
-    instructorName: 'Ingrid Victoria Rebouças Lima (CRF-PI 4137)',
+    instructorName: 'Ingrid Victória Rebouças Lima (CRF-PI 4137)',
     investmentValue: 'R$ 79,99 (Pagamento exclusivo via PIX)'
 };
 

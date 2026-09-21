@@ -12,7 +12,7 @@
 const CONFIG = {
     whatsappNumber: '5589994519780',
 
-    googleFormsUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog',
+    googleFormsUrl: 'https://forms.gle/bMM1sQ5GBNuA6Er47',
 
     courseName: 'Curso de Aplicação de Vacinas e Injetáveis',
     instructorName: 'Ingrid Victoria Rebouças Lima (CRF-PI 4137)',

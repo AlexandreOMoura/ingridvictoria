@@ -1,0 +1,1333 @@
+/**
+ * ==========================================================================
+ * CURSO DE APLICAÇÃO DE VACINAS E INJETÁVEIS
+ * Ingrid Victoria Rebouças Lima (CRF-PI 4137)
+ * Script de Interatividade, Carrossel e Links do Google Forms
+ * ==========================================================================
+ */
+
+// ==========================================================================
+// 1. CONFIGURAÇÕES PRINCIPAIS (EDITE AQUI FACILMENTE)
+// ==========================================================================
+const CONFIG = {
+    // Número oficial do WhatsApp:
+    whatsappNumber: '5589994519780',
+
+    // ======================================================================
+    // LINK DO SEU GOOGLE FORMS:
+    // Cole aqui o link da sua ficha no Google Forms. Todos os botões
+    // de "Garantir Vaga" e "Inscrição" do site atualizarão automaticamente!
+    // Exemplo: 'https://docs.google.com/forms/d/e/SEU_LINK_AQUI/viewform'
+    // ======================================================================
+    googleFormsUrl: '<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Aplicação de Vacinas e Injetáveis | Ingrid Victoria (CRF-PI 4137)</title>
+    <meta name="description" content="Curso presencial de Aplicação de Vacinas e Injetáveis em Paulistana - PI com a Farmacêutica Ingrid Victoria Rebouças Lima (CRF-PI 4137). Certificado de 20h, prática completa e material incluso.">
+    
+    <!-- Favicon com símbolo farmacêutico em SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230D9488'%3E%3Cpath d='M4.5 10.5C3.67 10.5 3 11.17 3 12s.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-15zM10.5 4.5C10.5 3.67 11.17 3 12 3s1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5v-15z'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts: Outfit e Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Ícones Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web" async></script>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================================
+         CABEÇALHO E BARRA DE NAVEGAÇÃO
+    ======================================================== -->
+    <header class="site-header" id="topo">
+        <div class="header-container">
+            <a href="#topo" class="brand-logo" aria-label="Página inicial">
+                <div class="brand-icon">
+                    <i class="ph-bold ph-first-aid"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Ingrid Victoria</span>
+                    <span class="brand-subtitle">Farmacêutica • CRF-PI 4137</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#sobre-curso" class="nav-link">O Curso</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Benefícios</a></li>
+                    <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="#instrutora" class="nav-link">Instrutora</a></li>
+                    <li><a href="#programacao" class="nav-link">Programação</a></li>
+                    <li><a href="#turmas" class="nav-link">Turmas</a></li>
+                    <li><a href="#localizacao" class="nav-link">Local</a></li>
+                </ul>
+                <div class="nav-cta-mobile">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-block btn-forms-link">
+                        <i class="ph-bold ph-pencil-simple"></i> Garantir Vaga (Forms)
+                    </a>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta-desktop btn-forms-link">
+                    <i class="ph-bold ph-pencil-simple"></i> Garantir Vaga
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================
+         HERO SECTION (BANNER PRINCIPAL)
+    ======================================================== -->
+    <section class="hero-section" id="sobre-curso">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <span>Inscrições Abertas • Capacitação Presencial</span>
+                </div>
+
+                <h1 class="hero-title">
+                    Curso de <span class="highlight-text">Aplicação de Vacinas</span> e Injetáveis
+                </h1>
+
+                <p class="hero-subtitle">
+                    Quer aprimorar seus conhecimentos e conquistar <strong>segurança absoluta</strong> na prática profissional? 
+                    Uma oportunidade para <strong>Técnicos em Farmácia, Enfermagem e profissionais da saúde</strong> aprenderem com sólido conteúdo teórico e intensa experiência prática.
+                </p>
+
+                <!-- Benefícios em destaque no Hero -->
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="ph-bold ph-certificate"></i>
+                        <span>Certificado de 20 Horas</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="ph-bold ph-book-open"></i>
+                        <span>Material Didático Incluso</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="ph-bold ph-stethoscope"></i>
+                        <span>Aula Teórica e Prática</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="ph-bold ph-coffee"></i>
+                        <span>Coffee Break pela Manhã</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="ph-bold ph-coat-hanger"></i>
+                        <span>Necessário apenas o seu jaleco</span>
+                    </div>
+                </div>
+
+                <!-- CTAs do Hero -->
+                <div class="hero-buttons">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-forms-link">
+                        <i class="ph-bold ph-sparkle"></i>
+                        Garantir Minha Vaga — R$ 79,99
+                    </a>
+                    <a href="https://wa.me/5589994519780?text=Ol%C3%A1%21%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20Curso%20de%20Aplica%C3%A7%C3%A3o%20de%20Vacinas%20e%20Injet%C3%A1veis." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-outline btn-lg">
+                        <i class="ph-bold ph-whatsapp-logo"></i>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+
+                <div class="hero-dates-strip">
+                    <div class="strip-item">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span><strong>Turma 1:</strong> 03 e 04/10</span>
+                    </div>
+                    <div class="strip-divider"></div>
+                    <div class="strip-item">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span><strong>Turma 2:</strong> 10 e 11/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Visual da Instrutora no Hero -->
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-image-wrapper">
+                        <img src="img/ingrid-perfil.jpg" alt="Farmacêutica Ingrid Victoria Rebouças Lima" class="hero-image" loading="eager">
+                        <div class="image-gradient-overlay"></div>
+                        
+                        <div class="floating-badge badge-crf">
+                            <i class="ph-fill ph-seal-check"></i>
+                            <div>
+                                <strong>CRF-PI 4137</strong>
+                                <span>Registro Ativo</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge badge-hours">
+                            <i class="ph-bold ph-clock"></i>
+                            <div>
+                                <strong>20 Horas</strong>
+                                <span>Certificação Oficial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-card-footer">
+                        <div class="instructor-quick-info">
+                            <h3>Ingrid Victoria Rebouças Lima</h3>
+                            <p>Farmacêutica • Pós-graduanda em Perícia Criminal & Ciências Forenses</p>
+                        </div>
+                        <div class="instructor-tag">
+                            <span>Instrutora do Curso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO DE BENEFÍCIOS E DIFERENCIAIS
+    ======================================================== -->
+    <section class="section differentials-section" id="diferenciais">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Diferenciais do Curso</span>
+                <h2 class="section-title">Por que se capacitar conosco?</h2>
+                <p class="section-description">
+                    Invista na sua capacitação e esteja ainda mais preparado(a) para o mercado de trabalho com conteúdo teórico e experiência prática.
+                </p>
+            </div>
+
+            <div class="differentials-grid">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-certificate"></i>
+                    </div>
+                    <h3 class="diff-title">Certificado de 20 Horas</h3>
+                    <p class="diff-text">
+                        Certificação profissional que valoriza seu currículo, válida para pontuação em processos seletivos e horas complementares acadêmicas.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-book-open"></i>
+                    </div>
+                    <h3 class="diff-title">Material Didático Incluso</h3>
+                    <p class="diff-text">
+                        Material didático completo com orientações de cálculos, diluição, preparo e administração para consulta na sua rotina profissional.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-syringe"></i>
+                    </div>
+                    <h3 class="diff-title">Aulas Teóricas & Práticas</h3>
+                    <p class="diff-text">
+                        Metodologia focada na prática real, desmistificando o cálculo de dosagens e aprimorando as vias de administração com biossegurança.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-coffee"></i>
+                    </div>
+                    <h3 class="diff-title">Coffee break</h3>
+                    <p class="diff-text">
+                        Coffee break matinal servido em ambos os dias de curso (sábado e domingo), proporcionando integração e networking entre os participantes.
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-coat-hanger"></i>
+                    </div>
+                    <h3 class="diff-title">Necessário Apenas o Jaleco</h3>
+                    <p class="diff-text">
+                        Sem despesas adicionais com insumos: agulhas, seringas, ampolas e simuladores de treino são 100% fornecidos no curso. Traga apenas o seu jaleco!
+                    </p>
+                </div>
+
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="ph-bold ph-shield-check"></i>
+                    </div>
+                    <h3 class="diff-title">Segurança na Prática</h3>
+                    <p class="diff-text">
+                        Domine técnicas assépticas, prevenção de acidentes com perfurocortantes e conduta rápida em casos de reações adversas e suporte imediato.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         CARROSSEL DE FOTOS DINÂMICO (JAVASCRIPT)
+    ======================================================== -->
+    <section class="section carousel-section" id="galeria">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Vivência e Prática</span>
+                <h2 class="section-title">Galeria & Treinamento</h2>
+                <p class="section-description">
+                    Conheça a instrutora, o ambiente científico e o foco no aprendizado prático de excelência.
+                </p>
+            </div>
+
+            <!-- Estrutura do Carrossel -->
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="courseCarousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        
+                        <!-- Slide 1: Ingrid no Laboratório (PIBIC) -->
+                        <div class="carousel-slide active">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/ingrid-laboratorio.jpg" alt="Ingrid Victoria em atividade de pesquisa e laboratório">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Pesquisa Científica (PIBIC)</span>
+                                    <h4>Vivência e Rigor Laboratorial</h4>
+                                    <p>Ingrid Victoria em atividade analítica: embasamento técnico e científico aplicado ao ensino seguro.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Ingrid Ambiente Farmácia -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/ingrid-farmacia.jpg" alt="Ingrid Victoria Farmacêutica CRF-PI 4137">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Atuação Farmacêutica</span>
+                                    <h4>Compromisso com a Prática Profissional</h4>
+                                    <p>Farmacêutica habilitada pelo CRF no curso de Aplicação de Vacinas e Injetáveis.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Preparo e Aspiração Asséptica -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/curso-injetaveis-1.jpg" alt="Preparo de injetáveis e técnicas assépticas">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Técnica e Precisão</span>
+                                    <h4>Preparo e Manuseio de Ampolas</h4>
+                                    <p>Aspiração segura, reconstituição de fármacos e manuseio asséptico sem risco de contaminação.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Vacinas e Ampolas -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/curso-injetaveis-2.jpg" alt="Aplicação de vacinas e imunobiológicos">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Imunobiológicos</span>
+                                    <h4>Aplicação de Vacinas com Confiança</h4>
+                                    <p>Protocolos de sala de vacina, manuseio seguro e técnicas de administração anatômica.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Procedimentos Clínicos -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/curso-injetaveis-3.jpg" alt="Manuseio de agulhas e seringas">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Cálculo e Dosagem</span>
+                                    <h4>Cálculos Farmacológicos sem Dúvidas</h4>
+                                    <p>Regra de três prática, conversão de dosagens e diluições sem receio no dia a dia.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6: Ambiente Clínico Prático -->
+                        <div class="carousel-slide">
+                            <div class="slide-card">
+                                <div class="slide-img-box">
+                                    <img src="img/curso-pratica-4.jpg" alt="Treinamento prático de saúde">
+                                </div>
+                                <div class="slide-caption">
+                                    <span class="caption-tag">Prática Supervisionada</span>
+                                    <h4>Simulação e Confiança Real</h4>
+                                    <p>Supervisão atenta para você ganhar segurança e executar procedimentos com domínio.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Botões de Navegação -->
+                <button class="carousel-btn btn-prev" id="carouselPrev" aria-label="Slide anterior">
+                    <i class="ph-bold ph-caret-left"></i>
+                </button>
+                <button class="carousel-btn btn-next" id="carouselNext" aria-label="Próximo slide">
+                    <i class="ph-bold ph-caret-right"></i>
+                </button>
+
+                <!-- Indicadores (Bullets / Dots) -->
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO SOBRE A INSTRUTORA
+    ======================================================== -->
+    <section class="section instructor-section" id="instrutora">
+        <div class="container">
+            <div class="instructor-grid">
+                
+                <div class="instructor-photo-col">
+                    <div class="instructor-frame">
+                        <img src="img/ingrid-perfil.jpg" alt="Ingrid Victoria Rebouças Lima" class="instructor-main-photo">
+                        
+                        <div class="instructor-experience-badge">
+                            <i class="ph-fill ph-graduation-cap"></i>
+                            <div>
+                                <strong>Capacitação</strong>
+                                <span>Teoria & Prática</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-info-col">
+                    <span class="section-tag">Instrutora Responsável</span>
+                    <h2 class="instructor-name">Ingrid Victoria Rebouças Lima</h2>
+                    <p class="instructor-headline">
+                        Farmacêutica inscrita no <strong>CRF-PI sob o nº 4137</strong>, dedicada ao ensino prático e à capacitação ética e segura dos profissionais da saúde.
+                    </p>
+
+                    <div class="instructor-credentials">
+                        <div class="cred-item">
+                            <div class="cred-icon"><i class="ph-bold ph-identification-card"></i></div>
+                            <div class="cred-text">
+                                <strong>Farmacêutica — CRF-PI 4137</strong>
+                                <span>Atuação ética, técnica e voltada à excelência profissional.</span>
+                            </div>
+                        </div>
+
+                        <div class="cred-item">
+                            <div class="cred-icon"><i class="ph-bold ph-student"></i></div>
+                            <div class="cred-text">
+                                <strong>Pós-Graduanda em Perícia Criminal e Ciências Forenses</strong>
+                                <span>Rigor metodológico e precisão técnica constante.</span>
+                            </div>
+                        </div>
+
+                        <div class="cred-item">
+                            <div class="cred-icon"><i class="ph-bold ph-flask"></i></div>
+                            <div class="cred-text">
+                                <strong>Participante do PIBIC</strong>
+                                <span>Projeto: <em>"Avaliação da atividade antimicrobiana dos extratos etanólicos das sementes de Pterodon emarginatus Vogel"</em>.</span>
+                            </div>
+                        </div>
+
+                        <div class="cred-item">
+                            <div class="cred-icon"><i class="ph-bold ph-certificate"></i></div>
+                            <div class="cred-text">
+                                <strong>Certificada pelo CRF</strong>
+                                <span>Curso: <em>Aplicação de Vacinas e Injetáveis</em>.</span>
+                            </div>
+                        </div>
+
+                        <div class="cred-item">
+                            <div class="cred-icon"><i class="ph-bold ph-medal"></i></div>
+                            <div class="cred-text">
+                                <strong>Certificada por Santiago & Leão LTDA</strong>
+                                <span>Curso: <em>Injetáveis: Cálculo, Preparo e Administração</em>.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instructor-quote">
+                        <i class="ph-bold ph-quotes"></i>
+                        <p>
+                            "O domínio correto da aplicação de vacinas e injetáveis transforma o profissional. Quando unimos o cálculo preciso, a técnica asséptica e a empatia no atendimento, garantimos a segurança do paciente e o respeito no mercado de trabalho."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO DE PROGRAMAÇÃO E CRONOGRAMA
+    ======================================================== -->
+    <section class="section schedule-section" id="programacao">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Estrutura Curricular</span>
+                <h2 class="section-title">Programação do Curso</h2>
+                <p class="section-description">
+                    Uma imersão completa dividida em teoria aprofundada e dinâmica prática intensiva.
+                </p>
+            </div>
+
+            <!-- Grade de Horários -->
+            <div class="schedule-days-grid">
+                
+                <!-- SÁBADO -->
+                <div class="schedule-day-card">
+                    <div class="day-header">
+                        <div class="day-icon"><i class="ph-bold ph-calendar-blank"></i></div>
+                        <div>
+                            <span class="day-title">SÁBADO</span>
+                            <span class="day-hours">08:00 às 19:00 (Intervalo das 12:30 às 14:00)</span>
+                        </div>
+                        <span class="day-badge">Dia Intensivo</span>
+                    </div>
+
+                    <div class="day-timeline">
+                        <div class="time-block">
+                            <div class="time-badge">08:00 - 10:00</div>
+                            <div class="time-info">
+                                <h4>Abertura, Biossegurança e Aspectos Legais</h4>
+                                <p>Legislação sanitária, competências do Técnico em Farmácia e Enfermagem, biossegurança e postura ética.</p>
+                            </div>
+                        </div>
+
+                        <!-- Único Coffee Break do Sábado: Pela Manhã -->
+                        <div class="time-block">
+                            <div class="time-badge">10:00 - 10:30</div>
+                            <div class="time-info break-info">
+                                <h4><i class="ph-bold ph-coffee"></i> Coffee break</h4>
+                            </div>
+                        </div>
+
+                        <div class="time-block">
+                            <div class="time-badge">10:30 - 12:30</div>
+                            <div class="time-info">
+                                <h4>Anatomia Aplicada e Vias de Administração</h4>
+                                <p>Localização anatômica, angulação correta e volume máximo para via Intradérmica (ID), Subcutânea (SC), Intramuscular (IM) e Endovenosa (EV).</p>
+                            </div>
+                        </div>
+
+                        <!-- Intervalo de Almoço -->
+                        <div class="time-block lunch-block">
+                            <div class="time-badge">12:30 - 14:00</div>
+                            <div class="time-info">
+                                <h4><i class="ph-bold ph-fork-knife"></i> Intervalo de Almoço</h4>
+                                <p>Pausa para alimentação e descanso (12:30 às 14:00).</p>
+                            </div>
+                        </div>
+
+                        <div class="time-block">
+                            <div class="time-badge">14:00 - 16:30</div>
+                            <div class="time-info">
+                                <h4>Cálculos Farmacológicos e Diluição sem Erros</h4>
+                                <p>Regra de três prática, conversão de unidades (mg para mL), cálculo de dosagem e reconstituição de fármacos.</p>
+                            </div>
+                        </div>
+
+                        <div class="time-block">
+                            <div class="time-badge">16:30 - 19:00</div>
+                            <div class="time-info">
+                                <h4>Preparo, Aspiração e Técnicas Assépticas</h4>
+                                <p>Abertura de ampolas e frascos-ampola com segurança, desinfecção, aspiração sem formação de bolhas e seleção de agulhas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOMINGO -->
+                <div class="schedule-day-card">
+                    <div class="day-header header-sunday">
+                        <div class="day-icon"><i class="ph-bold ph-calendar-star"></i></div>
+                        <div>
+                            <span class="day-title">DOMINGO</span>
+                            <span class="day-hours">08:00 às 12:00</span>
+                        </div>
+                        <span class="day-badge">Prática & Encerramento</span>
+                    </div>
+
+                    <div class="day-timeline">
+                        <div class="time-block">
+                            <div class="time-badge">08:00 - 09:30</div>
+                            <div class="time-info">
+                                <h4>Salas de Vacina e Imunobiológicos</h4>
+                                <p>Calendário vacinal, particularidades das vacinas, conservação e manuseio sem dor.</p>
+                            </div>
+                        </div>
+
+                        <!-- Único Coffee Break do Domingo: Pela Manhã -->
+                        <div class="time-block">
+                            <div class="time-badge">09:30 - 10:00</div>
+                            <div class="time-info break-info">
+                                <h4><i class="ph-bold ph-coffee"></i> Coffee break</h4>
+                            </div>
+                        </div>
+
+                        <div class="time-block">
+                            <div class="time-badge">10:00 - 11:30</div>
+                            <div class="time-info">
+                                <h4>Estação Prática Supervisionada & Reações Adversas</h4>
+                                <p>Prática supervisionada direta com agulhas e seringas, condutas em reações adversas e descarte correto de perfurocortantes.</p>
+                            </div>
+                        </div>
+
+                        <div class="time-block">
+                            <div class="time-badge">11:30 - 12:00</div>
+                            <div class="time-info">
+                                <h4>Entrega dos Certificados de 20 Horas</h4>
+                                <p>Encerramento solene, fotos oficiais e orientações finais.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sunday-alert-box">
+                        <i class="ph-fill ph-info"></i>
+                        <div>
+                            <strong>Lembrete importante:</strong>
+                            <p>É necessário apenas o seu jaleco para as atividades práticas. Todo o restante do material é fornecido pelo curso.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO DE TURMAS E INVESTIMENTO
+    ======================================================== -->
+    <section class="section pricing-section" id="turmas">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Vagas Limitadas</span>
+                <h2 class="section-title">Escolha sua Turma e Invista no seu Futuro</h2>
+                <p class="section-description">
+                    As vagas são limitadas para garantir atendimento individual durante toda a prática supervisionada.
+                </p>
+            </div>
+
+            <!-- Cards de Turmas -->
+            <div class="turmas-selection-grid">
+                
+                <!-- Turma 1 -->
+                <div class="turma-card" data-turma="Turma 1 (03 e 04/10)">
+                    <div class="turma-tag">Opção 1</div>
+                    <h3 class="turma-name">TURMA 1</h3>
+                    <div class="turma-dates">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span>03 e 04/10</span>
+                    </div>
+                    <ul class="turma-details-list">
+                        <li><i class="ph-bold ph-clock"></i> Sábado (08h às 19h) e Domingo (08h às 12h)</li>
+                        <li><i class="ph-bold ph-map-pin"></i> CETI Lucinete Santana da Silva</li>
+                        <li><i class="ph-bold ph-coffee"></i> Coffee break</li>
+                        <li><i class="ph-bold ph-users"></i> Vagas limitadas por ordem de inscrição</li>
+                    </ul>
+                    <!-- Direciona para o link do Forms -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block btn-forms-link">
+                        <i class="ph-bold ph-pencil-simple"></i> Garantir Vaga na Turma 1 (Forms)
+                    </a>
+                </div>
+
+                <!-- Turma 2 -->
+                <div class="turma-card featured-turma" data-turma="Turma 2 (10 e 11/10)">
+                    <div class="turma-tag tag-featured">Opção 2</div>
+                    <h3 class="turma-name">TURMA 2</h3>
+                    <div class="turma-dates">
+                        <i class="ph-bold ph-calendar-check"></i>
+                        <span>10 e 11/10</span>
+                    </div>
+                    <ul class="turma-details-list">
+                        <li><i class="ph-bold ph-clock"></i> Sábado (08h às 19h) e Domingo (08h às 12h)</li>
+                        <li><i class="ph-bold ph-map-pin"></i> CETI Lucinete Santana da Silva</li>
+                        <li><i class="ph-bold ph-coffee"></i> Coffee break</li>
+                        <li><i class="ph-bold ph-users"></i> Vagas limitadas por ordem de inscrição</li>
+                    </ul>
+                    <!-- Direciona para o link do Forms -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block btn-forms-link">
+                        <i class="ph-bold ph-pencil-simple"></i> Garantir Vaga na Turma 2 (Forms)
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Card Principal de Investimento -->
+            <div class="investment-card">
+                <div class="investment-content">
+                    <div class="investment-left">
+                        <span class="inv-subtitle">Investimento Acessível</span>
+                        <h3 class="inv-title">Capacitação Profissional Completa</h3>
+                        <p class="inv-desc">
+                            Tudo o que você precisa para se destacar profissionalmente, com certificado oficial de 20 horas e materiais inclusos.
+                        </p>
+                        
+                        <div class="inv-checklist">
+                            <div class="chk-item"><i class="ph-bold ph-check"></i> Certificado de 20 horas incluso</div>
+                            <div class="chk-item"><i class="ph-bold ph-check"></i> Material didático incluso</div>
+                            <div class="chk-item"><i class="ph-bold ph-check"></i> Aula teórica e prática</div>
+                            <div class="chk-item"><i class="ph-bold ph-check"></i> Coffee break pela manhã em ambos os dias</div>
+                            <div class="chk-item"><i class="ph-bold ph-check"></i> Necessário apenas o seu jaleco</div>
+                        </div>
+                    </div>
+
+                    <div class="investment-right">
+                        <div class="price-box">
+                            <span class="price-label">Valor total do investimento:</span>
+                            <div class="price-value">
+                                <span class="currency">R$</span>
+                                <span class="amount">79</span>
+                                <span class="cents">,99</span>
+                            </div>
+                            <span class="price-note"><i class="ph-bold ph-qr-code"></i> Pagamento exclusivo via PIX</span>
+                            
+                            <!-- Direciona para o Forms -->
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-block btn-forms-link">
+                                <i class="ph-bold ph-arrow-circle-right"></i> Garantir Vaga no Formulário
+                            </a>
+                            
+                            <a href="https://wa.me/5589994519780?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20chave%20PIX%20para%20o%20Curso%20de%20Injet%C3%A1veis%20(R%24%2079%2C99)." target="_blank" rel="noopener noreferrer" class="link-whatsapp-quick">
+                                <i class="ph-bold ph-whatsapp-logo"></i> Dúvidas sobre o PIX? Fale no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO LOCALIZAÇÃO & GOOGLE MAPS
+    ======================================================== -->
+    <section class="section location-section" id="localizacao">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Onde Acontecerá</span>
+                <h2 class="section-title">Local do Treinamento</h2>
+                <p class="section-description">
+                    Será na escola indicada: CETI Lucinete Santana da Silva em Paulistana - PI.
+                </p>
+            </div>
+
+            <div class="location-grid">
+                <!-- Informações do Local -->
+                <div class="location-info-card">
+                    <div class="loc-badge">
+                        <i class="ph-fill ph-buildings"></i>
+                        <span>Local do Curso</span>
+                    </div>
+
+                    <h3 class="school-name">CETI Lucinete Santana da Silva</h3>
+                    
+                    <p class="school-desc">
+                        O curso será realizado presencialmente na escola indicada: CETI Lucinete Santana da Silva, em Paulistana - PI.
+                    </p>
+
+                    <div class="address-details">
+                        <div class="address-item">
+                            <i class="ph-bold ph-map-pin"></i>
+                            <div>
+                                <strong>Endereço:</strong>
+                                <span>Rua Canuto Pereira, s/n, Bairro Triângulo</span>
+                            </div>
+                        </div>
+
+                        <div class="address-item">
+                            <i class="ph-bold ph-compass"></i>
+                            <div>
+                                <strong>Cidade / Estado:</strong>
+                                <span>Paulistana — PI, CEP 64750-000</span>
+                            </div>
+                        </div>
+
+                        <div class="address-item">
+                            <i class="ph-bold ph-clock"></i>
+                            <div>
+                                <strong>Horários do Curso:</strong>
+                                <span>Sábado: 08h às 19h (intervalo 12:30 às 14h) | Domingo: 08h às 12h</span>
+                            </div>
+                        </div>
+
+                        <div class="address-item">
+                            <i class="ph-bold ph-phone"></i>
+                            <div>
+                                <strong>Contato para Informações / WhatsApp:</strong>
+                                <span>(89) 99451-9780</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-actions">
+                        <a href="https://maps.google.com/?q=CETI+Lucinete+Santana+da+Silva+Paulistana+PI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                            <i class="ph-bold ph-navigation-arrow"></i> Abrir no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Iframe Interativo do Google Maps -->
+                <div class="map-container">
+                    <div class="map-frame">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=CETI+Lucinete+Santana+da+Silva,+Paulistana+-+PI&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa do CETI Lucinete Santana da Silva em Paulistana PI">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO DE INSCRIÇÃO (GOOGLE FORMS & COMPROVANTE WHATSAPP)
+    ======================================================== -->
+    <section class="section registration-section" id="inscricao">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Passo a Passo</span>
+                <h2 class="section-title">Como Garantir sua Vaga</h2>
+                <p class="section-description">
+                    A inscrição é realizada através da ficha no Google Forms e confirmada mediante o envio do comprovante de pagamento via PIX pelo WhatsApp.
+                </p>
+            </div>
+
+            <div class="forms-workflow-wrapper">
+                
+                <!-- Card com as etapas claras -->
+                <div class="workflow-steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon"><i class="ph-bold ph-clipboard-text"></i></div>
+                        <h4>1. Preencha o Formulário</h4>
+                        <p>Acesse a ficha de inscrição oficial e selecione a sua opção de data: <strong>Turma 1 (03 e 04/10)</strong> ou <strong>Turma 2 (10 e 11/10)</strong>.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon"><i class="ph-bold ph-qr-code"></i></div>
+                        <h4>2. Pagamento via PIX</h4>
+                        <p>O investimento é de <strong>R$ 79,99</strong> (pagamento exclusivo por PIX). A chave PIX está disponível na ficha e no WhatsApp.</p>
+                    </div>
+
+                    <div class="step-card highlight-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon"><i class="ph-bold ph-whatsapp-logo"></i></div>
+                        <h4>3. Envie o Comprovante</h4>
+                        <p><strong>Atenção:</strong> O comprovante de pagamento do PIX deverá ser enviado pelo WhatsApp <strong></strong> para confirmar sua vaga!</p>
+                    </div>
+                </div>
+
+                <!-- Card de Ação Principal do Forms -->
+                <div class="google-forms-main-card">
+                    <div class="forms-main-content">
+                        <div class="forms-main-left">
+                            <span class="forms-pill"><i class="ph-bold ph-shield-check"></i> Ficha Oficial de Inscrição</span>
+                            <h3 class="forms-title">Inscrição para o Curso de Injetáveis</h3>
+                            <p class="forms-text">
+                                Clique no botão abaixo para abrir a ficha de inscrição no Google Forms. Lá você escolherá a sua turma (Turma 1 ou Turma 2) e preencherá seus dados para a emissão do seu certificado de 20 horas.
+                            </p>
+                            
+                            <div class="forms-alert-box">
+                                <i class="ph-fill ph-warning-circle"></i>
+                                <div>
+                                    <strong>Importante sobre a confirmação da vaga:</strong>
+                                    <span>Após preencher o formulário, o <strong>comprovante de pagamento (PIX de R$ 79,99) deverá ser enviado pelo WhatsApp</strong> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="forms-main-right">
+                            <!-- ========================================================
+                                 LINK DO GOOGLE FORMS:
+                                 Substitua o link 'googleFormsUrl' no arquivo script.js
+                                 ou altere o atributo href abaixo quando tiver o seu link!
+                            ======================================================== -->
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-forms btn-lg btn-block btn-forms-link" id="googleFormsLinkBtn">
+                                <i class="ph-bold ph-arrow-square-out"></i>
+                                Abrir Ficha de Inscrição (Google Forms)
+                            </a>
+                            <span class="forms-hint">* O formulário será aberto em uma nova aba segura.</span>
+
+                            <div class="pix-receipt-cta">
+                                <span>Já preencheu e fez o PIX?</span>
+                                <a href="https://wa.me/5589994519780?text=Ol%C3%A1%21%20Acabei%20de%20preencher%20minha%20ficha%20de%20inscri%C3%A7%C3%A3o%20no%20Google%20Forms%20e%20estou%20enviando%20o%20meu%20comprovante%20de%20pagamento%20PIX." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-md btn-block">
+                                    <i class="ph-bold ph-whatsapp-logo"></i> Enviar Comprovante no WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SEÇÃO PERGUNTAS FREQUENTES (FAQ)
+    ======================================================== -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Tire suas Dúvidas</span>
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-description">
+                    Respostas para as principais dúvidas sobre inscrições, turmas e comprovante.
+                </p>
+            </div>
+
+            <div class="faq-accordion-container">
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Quem pode participar do curso?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O curso é especialmente voltado para Técnicos em Farmácia e Técnicos em Enfermagem, além de estudantes e profissionais da saúde que desejam aprimorar seus conhecimentos e ganhar segurança na prática de cálculo, preparo e administração de injetáveis e vacinas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Como funciona o coffee break do curso?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Haverá um coffee break, já incluso no valor de R$ 79,99, ideal para descanso e integração entre os alunos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso levar algum material para a aula prática?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>É necessário apenas o seu jaleco para as atividades práticas. Todo o restante do material didático, são fornecidos pelo curso.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Como realizo o pagamento e confirmo minha vaga?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O pagamento do valor de R$ 79,99 é realizado <strong>exclusivamente por PIX</strong>. Após preencher a ficha no Google Forms, o <strong>comprovante de pagamento deverá ser enviado pelo WhatsApp para (89) 99451-9780</strong> para a confirmação da sua vaga.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Como escolho as datas das turmas?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Na própria ficha de inscrição do Google Forms haverá a opção de seleção para você escolher entre a <strong>Turma 1 (03 e 04/10)</strong> ou a <strong>Turma 2 (10 e 11/10)</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Como é emitido o certificado de 20 horas?</span>
+                        <i class="ph-bold ph-caret-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O certificado de 20 horas é entregue no encerramento do curso, com carga horária, conteúdo programático discriminado e assinatura da Farmacêutica responsável.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         RODAPÉ PROFISSIONAL
+    ======================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col footer-about">
+                    <div class="brand-logo footer-logo">
+                        <div class="brand-icon">
+                            <i class="ph-bold ph-first-aid"></i>
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-name text-white">Ingrid Victoria</span>
+                            <span class="brand-subtitle text-muted-light">Farmacêutica • CRF-PI 4137</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        Curso de Aplicação de Vacinas e Injetáveis: Cálculo, Preparo e Administração. Capacitação de alto nível para Técnicos em Farmácia, Enfermagem e profissionais da saúde.
+                    </p>
+                    <div class="footer-crf-badge">
+                        <i class="ph-fill ph-seal-check"></i>
+                        <span>Farmacêutica CRF-PI nº 4137</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sobre-curso">Sobre o Curso</a></li>
+                        <li><a href="#diferenciais">Diferenciais e Benefícios</a></li>
+                        <li><a href="#galeria">Galeria de Fotos</a></li>
+                        <li><a href="#instrutora">Sobre a Instrutora</a></li>
+                        <li><a href="#programacao">Programação e Horários</a></li>
+                        <li><a href="#turmas">Turmas & Valores</a></li>
+                        <li><a href="#localizacao">Local do Curso</a></li>
+                        <li><a href="#inscricao">Inscrição & Comprovante</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Datas & Local</h4>
+                    <div class="footer-dates-info">
+                        <p><strong>Turma 1:</strong> 03 e 04/10</p>
+                        <p><strong>Turma 2:</strong> 10 e 11/10</p>
+                        <p class="mt-2"><strong>Horários:</strong></p>
+                        <p>Sábado: 08:00 às 19:00 (intervalo 12:30 às 14:00)</p>
+                        <p>Domingo: 08:00 às 12:00</p>
+                        <p class="mt-2"><strong>Local:</strong> CETI Lucinete Santana da Silva, Paulistana - PI</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contato & Comprovantes</h4>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/5589994519780" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <i class="ph-bold ph-whatsapp-logo text-green"></i>
+                            <span>(89) 99451-9780</span>
+                        </a>
+                        <p class="contact-location">
+                            <i class="ph-bold ph-map-pin"></i> Paulistana - Piauí
+                        </p>
+                        <div class="cta-mini-box">
+                            <span>Pagamento exclusivo por PIX</span>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJLwKTMDasUJc68f84NvB7ETn7zQvtXzW0M_4RADV0ibaCsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xs mt-1 btn-forms-link">Garantir Vaga</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Ingrid Victoria Rebouças Lima — Farmacêutica CRF-PI 4137. Todos os direitos reservados.</p>
+                <p class="dev-tag">Paulistana - PI • Capacitação em Saúde</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================
+         BOTÃO FLUTUANTE DO WHATSAPP COM TOOLTIP
+    ======================================================== -->
+    <aside class="floating-whatsapp-container" aria-label="Fale conosco no WhatsApp">
+        <a href="https://wa.me/5589994519780?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Curso%20de%20Aplica%C3%A7%C3%A3o%20de%20Vacinas%20e%20Injet%C3%A1veis." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="floating-whatsapp-btn" 
+           id="floatingWhatsappBtn"
+           aria-label="Conversar no WhatsApp com Ingrid Victoria">
+            <i class="ph-bold ph-whatsapp-logo"></i>
+            <span class="whatsapp-pulse"></span>
+        </a>
+        <div class="whatsapp-tooltip">
+            <strong>Dúvidas sobre o curso ou PIX?</strong>
+            <span>Clique e fale no WhatsApp</span>
+        </div>
+    </aside>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>',
+
+    // Dados do Curso
+    courseName: 'Curso de Aplicação de Vacinas e Injetáveis',
+    instructorName: 'Ingrid Victoria Rebouças Lima (CRF-PI 4137)',
+    investmentValue: 'R$ 79,99 (Pagamento exclusivo via PIX)'
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initHeaderNav();
+    initCarousel();
+    initGoogleFormsLinks();
+    initFaqAccordion();
+    setCurrentYear();
+});
+
+// ==========================================================================
+// 2. ATUALIZAÇÃO AUTOMÁTICA DE TODOS OS LINKS DE "GARANTIR VAGA" PARA O FORMS
+// ==========================================================================
+function initGoogleFormsLinks() {
+    const formLinks = document.querySelectorAll('.btn-forms-link, #googleFormsLinkBtn');
+    if (!formLinks.length || !CONFIG.googleFormsUrl) return;
+
+    formLinks.forEach(link => {
+        link.setAttribute('href', CONFIG.googleFormsUrl);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
+}
+
+// ==========================================================================
+// 3. MENU DE NAVEGAÇÃO MOBILE
+// ==========================================================================
+function initHeaderNav() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-cta-mobile a');
+
+    if (!menuToggle || !navMenu) return;
+
+    // Abrir / Fechar menu
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Fechar ao clicar em qualquer item do menu
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Fechar ao clicar fora do menu
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Sombra sutil no cabeçalho ao rolar a página
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.site-header');
+        if (header) {
+            if (window.scrollY > 30) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        }
+    });
+}
+
+// ==========================================================================
+// 4. CARROSSEL DE FOTOS COM JS PURO (AUTOPLAY, INDICADORES E TOUCH SWIPE)
+// ==========================================================================
+function initCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoplayTimer = null;
+    const autoplayDelay = 5000; // Intervalo de 5 segundos por slide
+
+    // Cria as bolinhas (indicadores) dinamicamente
+    if (indicatorsContainer) {
+        indicatorsContainer.innerHTML = '';
+        slides.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = `indicator-dot ${idx === 0 ? 'active' : ''}`;
+            dot.setAttribute('aria-label', `Ir para o slide ${idx + 1}`);
+            dot.addEventListener('click', () => {
+                goToSlide(idx);
+                resetAutoplay();
+            });
+            indicatorsContainer.appendChild(dot);
+        });
+    }
+
+    const dots = indicatorsContainer ? indicatorsContainer.querySelectorAll('.indicator-dot') : [];
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        slides.forEach((slide, idx) => {
+            slide.classList.toggle('active', idx === currentIndex);
+        });
+
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+
+    // Eventos dos botões de controle
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+    }
+
+    // Autoplay com pausa ao passar o mouse
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, autoplayDelay);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    if (carouselWrapper) {
+        carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+        carouselWrapper.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Suporte a gestos touch swipe em smartphones
+    let startX = 0;
+    let endX = 0;
+    const swipeThreshold = 40;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        stopAutoplay();
+    }, { passive: true });
+
+    track.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', () => {
+        const diffX = startX - endX;
+        if (Math.abs(diffX) > swipeThreshold && endX !== 0) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        startX = 0;
+        endX = 0;
+        startAutoplay();
+    });
+
+    // Inicia o carrossel automático
+    startAutoplay();
+}
+
+// ==========================================================================
+// 5. ACCORDION DE PERGUNTAS FREQUENTES (FAQ)
+// ==========================================================================
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (!questionBtn || !answer) return;
+
+        questionBtn.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Fecha outros itens para manter organizado
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherBtn = otherItem.querySelector('.faq-question');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                    if (otherAnswer) otherAnswer.style.maxHeight = null;
+                }
+            });
+
+            // Alterna o item atual
+            if (isActive) {
+                item.classList.remove('active');
+                questionBtn.setAttribute('aria-expanded', 'false');
+                answer.style.maxHeight = null;
+            } else {
+                item.classList.add('active');
+                questionBtn.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+// ==========================================================================
+// 6. ATUALIZAR ANO CORRENTE NO RODAPÉ
+// ==========================================================================
+function setCurrentYear() {
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+}

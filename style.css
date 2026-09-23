@@ -2384,3 +2384,608 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8rem;
     }
 }
+
+
+/* ==========================================================================
+   18. AJUSTES RESPONSIVOS — SEM ALTERAR A ESTRUTURA HTML
+   ========================================================================== */
+
+/* Evita qualquer vazamento horizontal causado por textos, cards ou componentes. */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container,
+.header-container {
+    min-width: 0;
+}
+
+/* Telas médias: preserva o layout original, mas reduz espaços onde necessário. */
+@media (max-width: 1100px) {
+    .header-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-container {
+        gap: 32px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.1rem, 5vw, 3rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .differentials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Tablets. */
+@media (max-width: 900px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-section {
+        padding-top: 110px;
+        padding-bottom: 70px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-card {
+        max-width: min(440px, 100%);
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        max-width: 100%;
+    }
+
+    /* Mantém os cards de programação dentro da largura disponível. */
+    .schedule-days-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .schedule-day-card {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .location-grid,
+    .investment-content,
+    .forms-main-content,
+    .instructor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-photo-col {
+        display: flex;
+        justify-content: center;
+    }
+
+    .instructor-info-col {
+        min-width: 0;
+    }
+
+    .workflow-steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .map-container,
+    .map-frame {
+        min-height: 360px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares e telas estreitas. */
+@media (max-width: 600px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section {
+        padding: 52px 0;
+    }
+
+    .section-header {
+        margin-bottom: 34px;
+    }
+
+    .section-title {
+        font-size: clamp(1.7rem, 8vw, 2.2rem);
+    }
+
+    .section-description {
+        font-size: 0.98rem;
+    }
+
+    /* Header */
+    .header-container {
+        padding: 9px 16px;
+        gap: 10px;
+    }
+
+    .brand-logo {
+        min-width: 0;
+        gap: 9px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .brand-text {
+        min-width: 0;
+    }
+
+    .brand-name {
+        font-size: 0.98rem;
+        white-space: normal;
+        line-height: 1.15;
+    }
+
+    .brand-subtitle {
+        font-size: 0.66rem;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .menu-toggle {
+        width: 30px;
+        height: 21px;
+    }
+
+    .nav-menu {
+        top: 58px;
+        max-height: calc(100vh - 58px);
+    }
+
+    /* Hero */
+    .hero-section {
+        padding-top: 92px;
+        padding-bottom: 55px;
+    }
+
+    .badge-pill {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 0.78rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 9vw, 2.5rem);
+        line-height: 1.12;
+    }
+
+    .hero-subtitle {
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+
+    .hero-highlights {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .highlight-item {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 0.82rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        min-width: 0;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .hero-dates-strip {
+        width: 100%;
+        padding: 12px 14px;
+        gap: 9px;
+    }
+
+    .strip-item {
+        width: 100%;
+        min-width: 0;
+        align-items: flex-start;
+    }
+
+    .strip-item span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-card {
+        padding: 10px;
+        border-radius: var(--radius-lg);
+    }
+
+    .hero-image-wrapper {
+        aspect-ratio: 4 / 5;
+    }
+
+    .floating-badge {
+        padding: 8px 10px;
+        gap: 7px;
+    }
+
+    .floating-badge strong {
+        font-size: 0.78rem;
+    }
+
+    .floating-badge span {
+        font-size: 0.66rem;
+    }
+
+    .floating-badge i {
+        font-size: 1.3rem;
+    }
+
+    .badge-crf {
+        top: 12px;
+        left: 8px;
+    }
+
+    .badge-hours {
+        right: 8px;
+        bottom: 12px;
+    }
+
+    .hero-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 14px 6px 4px;
+    }
+
+    .instructor-quick-info {
+        min-width: 0;
+    }
+
+    .instructor-quick-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .instructor-quick-info p {
+        font-size: 0.72rem;
+    }
+
+    /* Cards */
+    .differentials-grid,
+    .workflow-steps-grid,
+    .turmas-selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diff-card {
+        padding: 26px 22px;
+    }
+
+    /* Carrossel */
+    .carousel-wrapper {
+        padding: 0;
+    }
+
+    .carousel-container {
+        border-radius: var(--radius-lg);
+    }
+
+    .slide-img-box {
+        min-height: 230px;
+    }
+
+    .slide-caption {
+        padding: 22px 18px;
+    }
+
+    .slide-caption h4 {
+        font-size: 1.3rem;
+    }
+
+    .slide-caption p {
+        font-size: 0.92rem;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Instrutora */
+    .instructor-frame {
+        max-width: 100%;
+    }
+
+    .instructor-name {
+        font-size: clamp(1.7rem, 8vw, 2.2rem);
+    }
+
+    .cred-item {
+        align-items: flex-start;
+    }
+
+    .cred-text {
+        min-width: 0;
+    }
+
+    /* Programação */
+    .schedule-days-grid {
+        width: 100%;
+    }
+
+    .schedule-day-card {
+        max-width: 100%;
+    }
+
+    .day-header {
+        padding: 20px 18px;
+        gap: 11px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .day-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25rem;
+    }
+
+    .day-title {
+        font-size: 1.15rem;
+    }
+
+    .day-hours {
+        font-size: 0.76rem;
+        line-height: 1.35;
+    }
+
+    .day-badge {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .day-timeline {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .time-block {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .time-badge {
+        min-width: 0;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .time-info {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .time-info h4 {
+        font-size: 0.96rem;
+    }
+
+    .time-info p {
+        font-size: 0.84rem;
+    }
+
+    .sunday-alert-box {
+        margin: 8px 16px 16px;
+        padding: 14px;
+    }
+
+    /* Investimento / preço / PIX */
+    .investment-card {
+        padding: 30px 20px;
+    }
+
+    .investment-content {
+        gap: 26px;
+    }
+
+    .price-value .amount {
+        font-size: clamp(2.8rem, 15vw, 4rem);
+    }
+
+    .pix-qr-code {
+        width: min(180px, 70vw);
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .turma-card {
+        padding: 28px 20px;
+    }
+
+    .turma-tag {
+        position: static;
+        align-self: center;
+        margin-bottom: 14px;
+    }
+
+    /* Localização */
+    .location-info-card {
+        padding: 28px 20px;
+    }
+
+    .school-name {
+        font-size: 1.55rem;
+    }
+
+    .map-container,
+    .map-frame {
+        min-height: 300px;
+    }
+
+    /* Forms */
+    .google-forms-main-card {
+        padding: 26px 18px;
+    }
+
+    .forms-title {
+        font-size: 1.45rem;
+    }
+
+    .forms-text {
+        font-size: 0.92rem;
+    }
+
+    /* FAQ */
+    .faq-question {
+        padding: 16px;
+        font-size: 0.95rem;
+        gap: 10px;
+    }
+
+    .faq-answer,
+    .faq-item.active .faq-answer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Rodapé */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .site-footer {
+        padding-top: 55px;
+    }
+
+    .footer-bottom {
+        align-items: center;
+    }
+
+    /* Botão flutuante */
+    .floating-whatsapp-container {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .floating-whatsapp-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 1.7rem;
+    }
+}
+
+/* Celulares muito pequenos. */
+@media (max-width: 380px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .header-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.6rem;
+    }
+
+    .hero-title {
+        font-size: 1.78rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.92rem;
+    }
+
+    .hero-card {
+        padding: 8px;
+    }
+
+    .floating-badge {
+        padding: 6px 8px;
+    }
+
+    .floating-badge span {
+        display: none;
+    }
+
+    .floating-badge strong {
+        font-size: 0.72rem;
+    }
+
+    .day-header {
+        padding: 18px 14px;
+    }
+
+    .day-timeline {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .investment-card {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .schedule-day-card,
+    .google-forms-main-card,
+    .location-info-card {
+        border-radius: var(--radius-lg);
+    }
+}

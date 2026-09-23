@@ -1151,12 +1151,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .schedule-days-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
-
 .schedule-day-card {
     background: var(--bg-card);
     border-radius: var(--radius-xl);
@@ -1165,8 +1163,10 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
 }
-
 .day-header {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
     color: #FFFFFF;
@@ -1328,6 +1328,8 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     transition: var(--transition-bounce);
     display: flex;
+    align-items: center;
+    text-align: center;
     flex-direction: column;
 }
 
@@ -1335,12 +1337,16 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary);
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+    align-items: center;
+    text-align: center;
 }
 
 .featured-turma {
     border-color: var(--primary);
     background: #FFFFFF;
     box-shadow: var(--shadow-md);
+    align-items: center;
+    text-align: center;
 }
 
 .turma-tag {
